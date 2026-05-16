@@ -7,8 +7,8 @@
         :root {
             --dark-blue: #1d2a55;
             --light-green: #8bc655;
-            /* التعديل: جعل الخلفية أدكن بدرجتين إضافيتين لمظهر أكثر فخامة وتباين */
-            --bg-darker: #cbd5cb; 
+            /* التعديل: إعادة لون الشريحة ليكون أفتح بدرجتين (ناعم وأنيق) */
+            --bg-card-color: #e2e8e2; 
         }
 
         *, *::before, *::after {
@@ -26,7 +26,8 @@
             font-family: 'Arial', sans-serif;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
-            background-color: var(--bg-darker);
+            /* التعديل: خلفية المتصفح بالكامل أصبحت بيضاء تماماً */
+            background-color: #ffffff; 
         }
 
         /* الهيكل العام للبطاقة بمقاس A6 الحقيقي */
@@ -36,16 +37,18 @@
             position: relative;
             page-break-after: always;
             overflow: hidden;
-            background-color: var(--bg-darker);
-            /* هوامش وظلال للمعاينة داخل المتصفح فقط وتختفي عند حفظ PDF */
-            box-shadow: 0 0 15px rgba(0,0,0,0.15);
-            margin: 20px auto; 
+            /* التعديل: اللون المطلوب يطبق على الشريحة نفسها فقط */
+            background-color: var(--bg-card-color);
+            /* ظلال خفيفة للمعاينة داخل المتصفح وتختفي عند الطباعة */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin: 40px auto; 
         }
 
         @media print {
             .card-page {
                 margin: 0;
                 box-shadow: none;
+                background-color: var(--bg-card-color) !important;
             }
         }
 
@@ -106,7 +109,7 @@
         }
 
         .text-bottom {
-            color: var(--dark-blue); /* تحويل هذا النص للأزرق الداكن ليظهر بوضوح احترافي فوق الخلفية الأدكن */
+            color: var(--dark-blue);
             font-size: 14pt;
             font-weight: bold;
             letter-spacing: 0.5px;
