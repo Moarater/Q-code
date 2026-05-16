@@ -6,8 +6,8 @@
     <style>
         :root {
             --dark-blue: #1d2a55;
-            --light-green: #8bc656;
-            /* التعديل: إعادة لون الشريحة ليكون أفتح بدرجتين (ناعم وأنيق) */
+            --light-green: #8bc655;
+            /* لون الشريحة الناعم والأنيق */
             --bg-card-color: #e2e8e2; 
         }
 
@@ -26,7 +26,7 @@
             font-family: 'Arial', sans-serif;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
-            /* التعديل: خلفية المتصفح بالكامل أصبحت بيضاء تماماً */
+            /* خلفية المتصفح المحيطة بيضاء تماماً */
             background-color: #ffffff; 
         }
 
@@ -37,7 +37,6 @@
             position: relative;
             page-break-after: always;
             overflow: hidden;
-            /* التعديل: اللون المطلوب يطبق على الشريحة نفسها فقط */
             background-color: var(--bg-card-color);
             /* ظلال خفيفة للمعاينة داخل المتصفح وتختفي عند الطباعة */
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -122,6 +121,19 @@
             background-size: 90% auto;
             background-position: center center;
             background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 15mm; /* ترك مسافة علوية مناسبة للنص قبل الصورة */
+        }
+
+        .back-text {
+            color: var(--dark-blue);
+            font-size: 16pt;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.4;
+            width: 90%; /* لضمان عدم خروج النص عن أبعاد الصورة المحددة */
         }
     </style>
 </head>
@@ -149,6 +161,8 @@
 
     <!-- 2. الوجه الخلفي للبطاقة (BACK) -->
     <div class="card-page back-card">
+        <!-- التعديل: إضافة النص الجديد باللون الأزرق الموحد للشركة -->
+        <div class="back-text">Ihre Meinung ist uns WICHTIG!</div>
     </div>
 
 </body>
