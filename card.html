@@ -110,32 +110,46 @@
             text-align: center;
         }
 
-        /* ------------------ الوجه الخلفي المعدل (BACK) ------------------ */
+        /* ------------------ الوجه الخلفي (BACK) ------------------ */
         .back-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* تمركز كل المحتويات في منتصف كرت A6 عمودياً */
-            gap: 5mm; /* ترك مسافة أمان ثابتة ومريحة بين النص العلوي، الصورة، والنص السفلي */
+            justify-content: center; /* تمركز محتويات الكرت عمودياً */
+            padding: 10mm 5mm;
         }
 
-        /* حاوية الصورة الخلفية لتتوسط العناصر بصيغة لولبية مريحة */
+        /* حاوية العبارة العلوية المقسمة لسطرين */
+        .headline-container {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 5mm; /* المسافة بين النص والصورة */
+        }
+
+        .text-line-1 {
+            color: var(--dark-blue);
+            font-size: 13pt;
+            font-weight: normal;
+            display: block;
+            margin-bottom: 2mm;
+        }
+
+        .text-line-2 {
+            color: var(--dark-blue);
+            font-size: 18pt;
+            font-weight: bold;
+            display: block;
+            letter-spacing: 0.5px;
+        }
+
+        /* حاوية الصورة الخلفية */
         .back-hero-image {
             background-image: url('hero.jpg');
             background-size: 100% 100%;
             background-position: center center;
             background-repeat: no-repeat;
-            width: 94.5mm; /* يمثل 90% من عرض كرت A6 (105mm) */
-            height: 60mm;  /* ارتفاع متناسق ومثالي ليتسع للنصوص حوله */
-        }
-
-        .back-text {
-            color: var(--dark-blue);
-            font-size: 14pt;
-            font-weight: bold;
-            text-align: center;
-            line-height: 1.4;
-            width: 90%;
+            width: 94.5mm; /* 90% من عرض كرت A6 */
+            height: 62mm;  /* زيادة الارتفاع قليلاً لملء الفراغ بعد حذف النص السفلي */
         }
     </style>
 </head>
@@ -148,7 +162,7 @@
         </div>
 
         <div class="text-container">
-            <div class="text-top">Sie waren mit uns zufrieden?</div>
+            <div class="text-top">Sie waren with uns zufrieden?</div>
             <div class="text-middle">Wir freuen uns über Ihr Feedback auf unserer Google Seite.</div>
         </div>
 
@@ -163,14 +177,16 @@
 
     <!-- 2. الوجه الخلفي للبطاقة (BACK) -->
     <div class="card-page back-card">
-        <!-- الجزء الأول: يظهر الآن مباشرة فوق الصورة -->
-        <div class="back-text">Ihre Meinung ist uns WICHTIG!</div>
         
-        <!-- صورة الغلاف المتمركزة في المنتصف -->
+        <!-- العبارة الألمانية المقسمة لسطرين فوق الصورة مباشرة -->
+        <div class="headline-container">
+            <span class="text-line-1">Ihre Meinung ist uns</span>
+            <span class="text-line-2">WICHTIG!</span>
+        </div>
+        
+        <!-- صورة الغلاف المتمركزة بالكامل بدون أي نصوص أسفلها -->
         <div class="back-hero-image"></div>
         
-        <!-- الجزء الثاني: يظهر مباشرة فوق الصورة (اكتب لي الجملة لاستبدال هذا النص بها) -->
-        <div class="back-text">اكتب لي الجزء الثاني هنا ليظهر تحت الصورة مباشرة</div>
     </div>
 
 </body>
