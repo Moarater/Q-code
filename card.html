@@ -7,7 +7,6 @@
         :root {
             --dark-blue: #1d2a55;
             --light-green: #8bc655;
-            /* لون الشريحة الناعم والأنيق */
             --bg-card-color: #e2e8e2; 
         }
 
@@ -26,11 +25,9 @@
             font-family: 'Arial', sans-serif;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
-            /* خلفية المتصفح المحيطة بيضاء تماماً */
             background-color: #ffffff; 
         }
 
-        /* الهيكل العام للبطاقة بمقاس A6 الحقيقي */
         .card-page {
             width: 105mm;
             height: 148mm;
@@ -38,7 +35,6 @@
             page-break-after: always;
             overflow: hidden;
             background-color: var(--bg-card-color);
-            /* ظلال خفيفة للمعاينة داخل المتصفح وتختفي عند الطباعة */
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             margin: 40px auto; 
         }
@@ -86,7 +82,6 @@
             line-height: 1.4;
         }
 
-        /* حاوية الباركود */
         .qr-area {
             text-align: center;
             margin-bottom: 6mm;
@@ -115,25 +110,32 @@
             text-align: center;
         }
 
-        /* ------------------ الوجه الخلفي (BACK) ------------------ */
+        /* ------------------ الوجه الخلفي المعدل (BACK) ------------------ */
         .back-card {
-            background-image: url('hero.jpg');
-            background-size: 90% auto;
-            background-position: center center;
-            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 15mm; /* ترك مسافة علوية مناسبة للنص قبل الصورة */
+            justify-content: center; /* تمركز كل المحتويات في منتصف كرت A6 عمودياً */
+            gap: 5mm; /* ترك مسافة أمان ثابتة ومريحة بين النص العلوي، الصورة، والنص السفلي */
+        }
+
+        /* حاوية الصورة الخلفية لتتوسط العناصر بصيغة لولبية مريحة */
+        .back-hero-image {
+            background-image: url('hero.jpg');
+            background-size: 100% 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 94.5mm; /* يمثل 90% من عرض كرت A6 (105mm) */
+            height: 60mm;  /* ارتفاع متناسق ومثالي ليتسع للنصوص حوله */
         }
 
         .back-text {
             color: var(--dark-blue);
-            font-size: 16pt;
+            font-size: 14pt;
             font-weight: bold;
             text-align: center;
             line-height: 1.4;
-            width: 90%; /* لضمان عدم خروج النص عن أبعاد الصورة المحددة */
+            width: 90%;
         }
     </style>
 </head>
@@ -161,8 +163,14 @@
 
     <!-- 2. الوجه الخلفي للبطاقة (BACK) -->
     <div class="card-page back-card">
-        <!-- التعديل: إضافة النص الجديد باللون الأزرق الموحد للشركة -->
+        <!-- الجزء الأول: يظهر الآن مباشرة فوق الصورة -->
         <div class="back-text">Ihre Meinung ist uns WICHTIG!</div>
+        
+        <!-- صورة الغلاف المتمركزة في المنتصف -->
+        <div class="back-hero-image"></div>
+        
+        <!-- الجزء الثاني: يظهر مباشرة فوق الصورة (اكتب لي الجملة لاستبدال هذا النص بها) -->
+        <div class="back-text">اكتب لي الجزء الثاني هنا ليظهر تحت الصورة مباشرة</div>
     </div>
 
 </body>
