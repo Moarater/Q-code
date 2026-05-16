@@ -103,14 +103,14 @@
             margin-top: auto;
         }
 
-        /* ------------------ تصميم الوجه الخلفي (BACK) ------------------ */
+/* ------------------ تصميم الوجه الخلفي (BACK) ------------------ */
         .back-card {
             background-image: url('hero.jpg'); /* جلب صورة الغلاف */
-            background-size: 52mm 74mm;      /* تحديد مقاس الصورة بنفس أبعاد ورقة A6 تماماً */
-            background-position: center;       /* تمركز الصورة في المنتصف */
-            background-repeat: no-repeat;      /* منع تكرار الصورة نهائياً */
-            width: 52mm;                      /* تأكيد العرض بالمليمتر */
-            height: 74mm;                     /* تأكيد الارتفاع بالمليمتر */
+            background-size: 100% auto;        /* العرض يغطي 100% من الشريحة، والارتفاع يتناسب تلقائياً */
+            background-position: top center;   /* تبدأ الصورة من الأعلى وتتمركز في المنتصف أفقياً */
+            background-repeat: no-repeat;      /* منع تكرار الصورة */
+            width: 105mm;                      /* حجم الشريحة ثابت بمقاس A6 */
+            height: 148mm;                     /* حجم الشريحة ثابت بمقاس A6 */
         }
     </style>
 </head>
